@@ -13,13 +13,13 @@ class LinkedListNode
   
     until runner1.nil?
       runner1 = runner1.next_node
-      puts false if runner1.nil?
+      return false if runner1.nil?
   
       runner1 = runner1.next_node
       runner2 = runner2.next_node
-      puts true if runner1 == runner2
+      return true if runner1 == runner2
     end  
-    puts false
+    return false
   end
 
   def print_values(list_node)
@@ -39,7 +39,7 @@ node3 = LinkedListNode.new(12, node2)
 node1.next_node = node3
 
 # node1.print_values(node3)
-node1.infinite_linked_list(node3)
+puts node1.infinite_linked_list(node3)
 
 
 
