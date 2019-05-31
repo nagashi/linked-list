@@ -7,7 +7,7 @@ class LinkedListNode
     @next_node = next_node
   end
 
-  def infinite_linked_list(list)
+  def infinite_linked_list?(list)
     runner1 = list.next_node
     runner2 = list.next_node
   
@@ -39,7 +39,7 @@ node3 = LinkedListNode.new(12, node2)
 node1.next_node = node3
 
 # node1.print_values(node3)
-puts node1.infinite_linked_list(node3)
+puts node1.infinite_linked_list?(node3)
 
 
 
