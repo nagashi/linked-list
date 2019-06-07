@@ -7,18 +7,16 @@ class LinkedListNode
   end
 
   def infinite_linked_list?(list)
-    runner1 = list.next_node
-    runner2 = list.next_node
-    cycle = 0
+    slow_runner = list.next_node
+    fast_runner = list.next_node
   
-    until runner1.nil?
-      runner1 = runner1.next_node
-      return false if runner1.nil?
+    until slow_runner.nil?
+      slow_runner = slow_runner.next_node
   
-      runner1 = runner1.next_node
-      runner2 = runner2.next_node
-      cycle += 1
-      return "true in #{cycle} cycles" if runner1 == runner2
+      slow_runner = slow_runner.next_node
+      fast_runner = fast_runner.next_node
+      
+      return true if fast_runner == slow_runner
     end
     false
   end
